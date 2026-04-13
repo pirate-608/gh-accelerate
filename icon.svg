@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- 背景圆角矩形 -->
+  <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#2d8cff"/>
+  
+  <!-- 火箭身体 -->
+  <path d="M64 20 L52 50 L52 80 L76 80 L76 50 Z" fill="#ffffff" opacity="0.95"/>
+  
+  <!-- 火箭头部 -->
+  <path d="M64 20 L52 40 L76 40 Z" fill="#ff5e5e"/>
+  
+  <!-- 左翼 -->
+  <path d="M52 65 L38 75 L52 75 Z" fill="#ffffff" opacity="0.85"/>
+  
+  <!-- 右翼 -->
+  <path d="M76 65 L90 75 L76 75 Z" fill="#ffffff" opacity="0.85"/>
+  
+  <!-- 舷窗 -->
+  <circle cx="64" cy="58" r="8" fill="#2d8cff"/>
+  <circle cx="64" cy="58" r="5" fill="#ffffff"/>
+  
+  <!-- 尾部火焰 -->
+  <ellipse cx="64" cy="84" rx="8" ry="10" fill="#ffb347"/>
+  <ellipse cx="61" cy="86" rx="4" ry="8" fill="#ff5e5e"/>
+  <ellipse cx="67" cy="86" rx="4" ry="8" fill="#ff5e5e"/>
+  
+  <!-- 加速线条 -->
+  <line x1="44" y1="45" x2="36" y2="40" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <line x1="42" y1="55" x2="32" y2="53" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <line x1="84" y1="45" x2="92" y2="40" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <line x1="86" y1="55" x2="96" y2="53" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- 底部小星星 -->
+  <text x="20" y="110" font-size="14" fill="#ffffff" opacity="0.6">✦</text>
+  <text x="100" y="105" font-size="10" fill="#ffffff" opacity="0.5">✦</text>
+  <text x="108" y="118" font-size="8" fill="#ffffff" opacity="0.4">✦</text>
+</svg>

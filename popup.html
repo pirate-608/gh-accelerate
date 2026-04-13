@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 260px;
+            padding: 16px;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f6f8fa;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            color: #1f2d3d;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
+            margin: 10px 0;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.2s;
+            border-radius: 28px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.2s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #2d8cff;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(24px);
+        }
+
+        .status {
+            margin: 12px 0 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.enabled {
+            color: #2d8cff;
+        }
+
+        .status.disabled {
+            color: #8a99aa;
+        }
+
+        .desc {
+            font-size: 12px;
+            color: #6c7a8a;
+            margin-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+
+        .worker-url {
+            font-family: monospace;
+            font-size: 11px;
+            background: #eef2f6;
+            padding: 4px 8px;
+            border-radius: 12px;
+            word-break: break-all;
+            margin-top: 8px;
+        }
+
+        .config {
+            margin-top: 12px;
+            text-align: left;
+        }
+
+        .config label {
+            display: block;
+            font-size: 12px;
+            color: #4b5a69;
+            margin-bottom: 6px;
+        }
+
+        .config input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #d0d8e0;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .config input:focus {
+            border-color: #2d8cff;
+            box-shadow: 0 0 0 2px rgba(45, 140, 255, 0.15);
+        }
+
+        .config button {
+            margin-top: 8px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            background: #2d8cff;
+            color: #fff;
+            font-size: 12px;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+
+        .config-tip {
+            margin-top: 6px;
+            font-size: 11px;
+            color: #6c7a8a;
+        }
+
+        .config-tip.error {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>🚀 GitHub 加速器</h3>
+        <label class="toggle-switch" for="enableSwitch" aria-label="开启或关闭加速">
+            <input type="checkbox" id="enableSwitch">
+            <span class="slider"></span>
+        </label>
+        <div id="statusText" class="status disabled">⚪ 已关闭</div>
+        <div class="desc">
+            开启后，点击 GitHub、Raw、Gist 链接<br>
+            自动通过 Worker 加速访问
+        </div>
+        <div class="config">
+            <label for="acceleratorBaseInput">加速器地址（可选）</label>
+            <input id="acceleratorBaseInput" type="text" placeholder="例如：git.67656.fun 或 https://git.67656.fun/">
+            <button id="saveConfigBtn" type="button">保存地址</button>
+            <div id="configTip" class="config-tip">未填写时默认为空，不进行地址替换</div>
+        </div>
+        <div id="workerUrlPreview" class="worker-url">
+            🌐 当前：未配置
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
